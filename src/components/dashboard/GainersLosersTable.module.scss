@@ -1,0 +1,42 @@
+.gainersLosersTable {
+    width: 100%;
+}
+
+.loser {
+    color: #bd1919;
+    font-weight: 600;
+}
+
+.gainer {
+    color: #2ba901;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+}
+
+table td:nth-child(1), thead:nth-child(1) {
+    text-align: left;
+}
+
+table td:nth-child(2), thead:nth-child(2) {
+    text-align: left;
+}
+
+table td:nth-child(3), thead:nth-child(3) {
+    text-align: right;
+}
+
+table td:nth-child(4), thead:nth-child(4) {
+    text-align: center;
+}
+
+table td:nth-child(5) {
+    text-align: left;
+} 
+
+tr td:first-child {padding-left:0px;}
+tr th:first-child {padding-left:0px;}
+td {padding:5px 0px 5px 20px;}
+th {padding:5px 0px 5px 20px;}
