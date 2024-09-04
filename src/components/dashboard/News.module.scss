@@ -3,10 +3,24 @@
     flex-flow: column nowrap;
     gap: 20px;
 
+    img {
+        width: 200px;
+        height: 110px;
+    }
+
     h3 {
         margin-bottom: 0;
     }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        height: 110px;
+        text-overflow: ellipsis;
+        overflow: auto;
+    }
 }
+
 
 .news p {
     margin: 0;
@@ -28,6 +42,11 @@
     align-items: start;
     width: 100%;
     gap: 10px;
+}
+
+
+a::-webkit-scrollbar {
+    display: none;
 }
 
 .news img {

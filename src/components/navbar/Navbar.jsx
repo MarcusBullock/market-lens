@@ -23,7 +23,10 @@ const Navbar = () => {
         <nav className={styles.navbar}>
             <Container>
                 <div className={styles.navbarItems}>
-                    <Link to="/dashboard">
+                    <Link
+                        to="/dashboard"
+                        onClick={() => selectTab('dashboard')}
+                    >
                         <div className={styles.logo}>
                             <img src={Logo} className={styles.img} alt="logo" />
                         </div>

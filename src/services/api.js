@@ -223,8 +223,8 @@ export async function getNews() {
             return cacheData;
         }
 
-        const url = `https://finnhub.io/api/v1/news?category=general&token=${
-            import.meta.env.VITE_FINNHUB_API_KEY
+        const url = `https://financialmodelingprep.com/api/v3/fmp/articles?page=0&size=5&apikey=${
+            import.meta.env.VITE_FMP_API_KEY
         }`;
 
         const response = await fetch(url);

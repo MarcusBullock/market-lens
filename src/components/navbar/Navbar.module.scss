@@ -3,6 +3,7 @@
     padding: 1rem;
     justify-content: center;
     display: flex;
+    color: #111111;
 
     .logo {
         margin-top: 4px;
@@ -31,20 +32,21 @@
     }
 
     .active {
-        color: #a400e0;
+        color: #a400e0 !important;
     }
 
     .link {
         text-decoration: none;
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 600;
         padding: 10px;
         border-radius: 9999px;
         user-select: none;
+        color: #1b1b1b;
 
         &:hover {
             color: #a400e0;
-            background-color: #dedede;
+            background-color: rgb(242, 223, 206);
         }
     }
 }

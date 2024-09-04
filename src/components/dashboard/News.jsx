@@ -18,11 +18,15 @@ function News({ className }) {
         return <div>ERROR</div>;
     }
 
+    function stripHtml(html) {
+        return html.replace(/<\/?[^>]+(>|$)/g, '');
+    }
+
     return (
         <div className={classNames(styles.news, className)}>
             <h3>Market News</h3>
             <ul>
-                {data?.slice(0, 6).map((row) => (
+                {data.content.map((row) => (
                     <li key={row.headline}>
                         <img
                             src={row.image}
@@ -30,10 +34,12 @@ function News({ className }) {
                             width={200}
                             height={110}
                         />
-                        <span className={styles.text}>
-                            <h4>{row.headline}</h4>
-                            <p>{row.summary}</p>
-                        </span>
+                        <a href={row.link} target="_blank">
+                            <span className={styles.text}>
+                                <h4>{row.title}</h4>
+                                <p>{stripHtml(row.content)}</p>
+                            </span>
+                        </a>
                     </li>
                 ))}
             </ul>
