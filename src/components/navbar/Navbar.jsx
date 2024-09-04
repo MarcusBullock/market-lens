@@ -30,16 +30,6 @@ const Navbar = () => {
                     </Link>
                     <div className={styles.navLinks}>
                         <Link
-                            to="/dashboard"
-                            onClick={() => selectTab('dashboard')}
-                            className={classNames(
-                                styles.link,
-                                selectedTab === 'dashboard' ? styles.active : ''
-                            )}
-                        >
-                            Dashboard
-                        </Link>
-                        <Link
                             to="/stocks"
                             onClick={() => selectTab('stocks')}
                             className={classNames(

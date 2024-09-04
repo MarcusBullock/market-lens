@@ -1,15 +1,55 @@
 .dashboard {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
+    flex-direction: column;
 
-.topLosers,
-.topGainers {
-    max-height: 400px;
-    overflow: auto;
-    background-color: #fff;
-    border-radius: 35px;
-    padding: 20px;
-    border: 3px solid #dad8d8;
+    .gainersLosers {
+        display: flex;
+        flex-direction: column;
+        margin-top: 138px;
+    }
+    
+    .news {   
+        margin-bottom:60px;        
+    }
+
+    .general {        
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 60px;
+        gap: 20px;
+        justify-content: space-between;
+
+        .sector,
+        .commodities,
+        .currencies {
+            width: 100%;
+        }
+    }
+
+    @media screen and (min-width: 1194px) {
+        .gainersLosers {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 0;
+            flex-shrink: 1;
+            margin-top: 138px;
+            gap: 20px;
+        }
+
+        .general {        
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 60px;
+
+            .currencies{
+                width:33%;
+            }
+            .sector {
+                width: 33%;
+            }
+            .commodities {
+                width: 33%;
+            }
+        }
+    }
 }

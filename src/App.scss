@@ -5,7 +5,7 @@ html {
     margin: 0;
     padding: 0;
     font-size: 100%;
-    background-color: #f7f6f6;
+    background-color: rgb(255, 241, 229);
     overflow-x: hidden;
     box-sizing: border-box;
     color: #272525;
@@ -125,6 +125,10 @@ h5 {
 small {
     font-size: 0.8rem;
     font-style: normal;
+}
+
+main {
+    flex: 1;
 }
 
 .container {

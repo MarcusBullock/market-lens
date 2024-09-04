@@ -1,9 +1,18 @@
-.topGainers::-webkit-scrollbar {
-    display: none;
+.topGainers {    
+    max-height: 400px;
+    overflow: auto;
+    border: 2px solid #4e4e4e;    
+    background-color: rgb(255, 241, 229);
+    border-radius: 35px;
+    padding: 20px; 
+    
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
 }
 
-h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-top: 10px;
+.topGainers::-webkit-scrollbar {
+    display: none;
 }

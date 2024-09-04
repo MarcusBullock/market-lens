@@ -2,7 +2,6 @@ import { useQuery } from '@tanstack/react-query';
 import { getTopLosers } from '../../services/api';
 import { PropTypes } from 'prop-types';
 import GainersLosersTable from './GainersLosersTable';
-import classNames from 'classnames';
 import styles from './TopLosers.module.scss';
 
 function TopLosers({ className }) {
@@ -24,9 +23,9 @@ function TopLosers({ className }) {
     }
 
     return (
-        <div>
+        <div className={className}>
             <h3>Top Losers</h3>
-            <div className={classNames(styles.topLosers, className)}>
+            <div className={styles.topLosersContainer}>
                 <GainersLosersTable data={losersData} isGainers={false} />
             </div>
         </div>

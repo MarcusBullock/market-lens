@@ -1,9 +1,18 @@
-.topLosers::-webkit-scrollbar {
-    display: none;
+.topLosersContainer {    
+    max-height: 400px;
+    overflow: auto;
+    border-radius: 35px;
+    padding: 20px;
+    border: 2px solid #4e4e4e;    
+    background-color: rgb(255, 241, 229);
+    
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
 }
 
-h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-top: 10px;
+.topLosersContainer::-webkit-scrollbar {
+    display: none;
 }

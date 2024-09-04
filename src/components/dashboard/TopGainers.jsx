@@ -1,8 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getTopGainers } from '../../services/api';
-import { string } from 'prop-types';
+import { PropTypes } from 'prop-types';
 import GainersLosersTable from './GainersLosersTable';
-import classNames from 'classnames';
 import styles from './TopGainers.module.scss';
 
 function TopGainers({ className }) {
@@ -24,9 +23,9 @@ function TopGainers({ className }) {
     }
 
     return (
-        <div>
+        <div className={className}>
             <h3>Top Gainers</h3>
-            <div className={classNames(styles.topGainers, className)}>
+            <div className={styles.topGainers}>
                 <GainersLosersTable data={gainersData} isGainers={true} />
             </div>
         </div>
@@ -36,5 +35,5 @@ function TopGainers({ className }) {
 export default TopGainers;
 
 TopGainers.propTypes = {
-    className: string,
+    className: PropTypes.string,
 };

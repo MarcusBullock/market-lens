@@ -1,45 +1,56 @@
-.conveyorContainer {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-}
-.conveyorList {
-    padding: 0;
-    margin: 0;
+.indexCarousel {
+    width: 100vw;
     position: absolute;
-    list-style: none;
-    animation: conveyor 40s linear infinite;
-    animation-play-state: running;
-}
+    left: 0;
 
-.conveyorList.paused {
-    animation-play-state: paused;
-}
-
-.conveyorList.running {
-    animation-play-state: running;
-}
-
-ul {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-
-}
-
-li {
-    padding: 10px 25px;
-    background-color: #fff;
-    border-radius: 15px;
-    border: 3px solid #dad8d8;
-}
-
-@keyframes conveyor {
-    from {
-        left: 100%;
+    .card {
+        padding: 5px 10px;
+        border-radius: 15px;
+        border: 2px solid #4e4e4e;    
+        background-color:  rgb(242, 223, 206) !important;    
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
-    to {
-        left: -100%;
+    
+    .chart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        margin-left: -20px;
+        padding-top: 10px;
+    }
+
+    .headerRow {
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .headerMetrics {
+        margin-top: 3px;;
+    }
+
+    .header {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 190px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.03rem;
+    }
+
+    .loser {
+        color: #bd1919;
+    }
+    
+    .gainer {
+        color: #2ba901;
+    }
+
+    h5 {
+        margin: 0;
     }
 }

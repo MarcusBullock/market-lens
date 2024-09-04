@@ -1,0 +1,27 @@
+.footer {
+    height: 100px;   
+    text-align: center; 
+    background-color:  rgb(242, 223, 206);    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img {
+        margin: -5px 15px 0 0;
+        height: 55px;
+        width: 190px;
+    }
+
+    span {
+        font-size: 13px;
+    }
+}
