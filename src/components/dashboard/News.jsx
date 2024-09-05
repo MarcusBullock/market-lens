@@ -34,7 +34,7 @@ function News({ className }) {
                             width={200}
                             height={110}
                         />
-                        <a href={row.link} target="_blank">
+                        <a href={row.link} target="_blank" rel="noreferrer">
                             <span className={styles.text}>
                                 <h4>{row.title}</h4>
                                 <p>{stripHtml(row.content)}</p>

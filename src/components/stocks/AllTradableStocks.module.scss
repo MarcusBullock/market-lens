@@ -1,0 +1,142 @@
+.table {
+    width: 100%;
+    max-width: 100%;
+    border: 3px solid #4e4e4e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.list {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+.even {
+    background-color: rgb(242, 223, 206); ;
+}
+
+.odd {
+    background-color: rgb(255, 241, 229);;
+}
+
+.header {
+    display: flex;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+    background-color:  rgb(242, 223, 206);
+    color: #252424;
+    text-transform: uppercase;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-size:18px;
+    border-bottom: 1px solid #252424 ;
+}
+
+.header1 {
+    width: 15%;
+    max-width: 15%;
+    text-align: right;
+    font-weight: 700;
+}
+
+.header2 {
+    width: 55%;
+    max-width: 55%;
+}
+
+.header3 {
+    width: 10%;
+    max-width: 10%;
+}
+
+.header4 {
+    width: 10%;
+    max-width: 10%;
+    text-align: start;
+}
+
+.header5 {
+    width: 10%;
+    max-width: 10%;
+}
+
+.cell1 {
+    width: 15%;
+    max-width: 15%;
+    text-align: right;
+    font-weight: 600;
+    color: #a400e0;
+}
+
+.cell2 {
+    width: 55%;
+    max-width: 55%;
+    font-weight: 500;
+}
+
+.cell3 {
+    width: 10%;
+    max-width: 10%;
+}
+
+.cell4 {
+    width: 10%;
+    max-width: 10%;
+}
+
+.cell5 {
+    width: 10%;
+    max-width: 10%;
+    text-transform: capitalize;
+}
+
+.headerCell {
+    flex: 1;
+    padding: 15px;
+}
+
+.headerCell:last-child {
+    border-right: none;
+}
+
+.row {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.cell {
+    flex: 1;
+    padding: 10px;
+}
+
+.searchBar {
+    padding: 10px;
+    background-color: transparent;
+    text-align: center;
+}
+
+.searchInput {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    height: 60px;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+    border: 2px solid #a400e0;;
+}

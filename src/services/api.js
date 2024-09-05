@@ -304,6 +304,27 @@ export async function getSectorPerformance() {
     }
 }
 
+export async function getAllTradableStocks() {
+    try {
+        const url = `https://financialmodelingprep.com/api/v3/available-traded/list?apikey=${
+            import.meta.env.VITE_FMP_API_KEY
+        }`;
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(
+                `Unsuccessful getAllTradableStocks request. Status: ${response.status} - ${response.statusText}`
+            );
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error in getAllTradableStocks:', error);
+        throw error;
+    }
+}
+
 function dataIsXHoursOld(startTime, endTime, days) {
     const hoursDifference = differenceInHours(endTime, startTime);
     return hoursDifference >= days;

@@ -9,7 +9,7 @@
     }
     
     .news {   
-        margin-bottom:60px;        
+        margin-bottom:30px;        
     }
 
     .general {        
@@ -36,10 +36,13 @@
             gap: 20px;
         }
 
+        .news {
+            margin-bottom: 40px;
+        }
+
         .general {        
             display: flex;
             flex-direction: row;
-            margin-bottom: 60px;
 
             .currencies{
                 width:33%;
