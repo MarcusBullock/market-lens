@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getTopLosers } from '../../services/api';
+import { getTopLosers } from '../../services/dashboardApi';
 import { PropTypes } from 'prop-types';
 import GainersLosersTable from './GainersLosersTable';
 import styles from './TopLosers.module.scss';

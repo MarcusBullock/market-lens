@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getIndexCarouselData } from '../../services/api';
+import { getIndexCarouselData } from '../../services/dashboardApi';
 import { Area, AreaChart, XAxis, YAxis } from 'recharts';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import classNames from 'classnames';

@@ -1,0 +1,47 @@
+.loading {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 100vh;
+}
+
+.stock {
+
+    .headerRow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .headerPrice {
+        font-weight: 800;
+        font-family: "Montserrat", sans-serif;
+        color: #313131;
+        font-size: 28px;
+        margin: 0;
+    }
+
+    .headerChange {
+        font-weight: 700;
+        font-size: 19px;
+        margin-left: 10px;
+    }
+
+    .green {
+        color: #00c210;
+    }
+
+    .red {
+        color: #cc0000;
+    }    
+}
+
+.stock h1 {
+    letter-spacing: 0.03rem;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #313131;
+    margin-bottom: 10px;
+}
+

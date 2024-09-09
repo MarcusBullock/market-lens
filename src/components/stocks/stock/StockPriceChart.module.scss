@@ -1,0 +1,18 @@
+.stockPriceChart {
+    height: 500px;
+
+    p {
+        padding: 0 0 2px 0;
+        margin: 0;
+        font-weight: 500;
+    }
+
+    span {
+        color: #a400e0;
+        font-weight: 600;
+    }
+
+    .customTooltip {
+        border-radius: 25px;
+    }
+}

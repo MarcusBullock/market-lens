@@ -9,6 +9,11 @@
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 }
 
 .list {
@@ -18,6 +23,14 @@
 
 .list::-webkit-scrollbar {
     display: none;
+}
+
+.loading {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 100vh;
 }
 
 .even {
@@ -50,8 +63,8 @@
 }
 
 .header2 {
-    width: 55%;
-    max-width: 55%;
+    width: 50%;
+    max-width: 50%;
 }
 
 .header3 {
@@ -60,8 +73,8 @@
 }
 
 .header4 {
-    width: 10%;
-    max-width: 10%;
+    width: 15%;
+    max-width: 15%;
     text-align: start;
 }
 
@@ -79,8 +92,8 @@
 }
 
 .cell2 {
-    width: 55%;
-    max-width: 55%;
+    width: 50%;
+    max-width: 50%;
     font-weight: 500;
 }
 
@@ -90,8 +103,8 @@
 }
 
 .cell4 {
-    width: 10%;
-    max-width: 10%;
+    width: 15%;
+    max-width: 15%;
 }
 
 .cell5 {
@@ -111,7 +124,13 @@
 
 .row {
     display: flex;
+    align-items: center;
     border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.row:hover {
+    background-color: rgb(246, 228, 250);
 }
 
 .cell {
@@ -123,20 +142,35 @@
     padding: 10px;
     background-color: transparent;
     text-align: center;
+    user-select: none;
 }
 
 .searchInput {
     width: 50%;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 2px solid #252424 ;
     border-radius: 20px;
     height: 60px;
     font-size: 18px;
     outline: none;
+    padding: 25px;
     transition: border-color 0.2s ease;
+    background-color: rgb(242, 223, 206);
 }
 
 .searchInput:focus {
-    border: 2px solid #a400e0;;
+    border: 2px solid #a400e0;
+}
+
+.results {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.count {
+    color: #a400e0;
+    font-weight: 700;
 }

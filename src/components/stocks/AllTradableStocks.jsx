@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { getAllTradableStocks } from '../../services/api';
+import { getAllTradableStocks } from '../../services/dashboardApi';
 import { FixedSizeList as List } from 'react-window';
 import styles from './AllTradableStocks.module.scss';
 import classNames from 'classnames';
+import { PropTypes } from 'prop-types';
+import Loading from '../generic/Loading';
+import { Link } from 'react-router-dom';
 
 function AllTradableStocks() {
     const { data, isLoading, isError } = useQuery({
@@ -19,7 +22,11 @@ function AllTradableStocks() {
     };
 
     if (isLoading) {
-        return <div>Fucking wait, cunt!</div>;
+        return (
+            <div className={styles.loading}>
+                <Loading text="Loading all global stock data..." />
+            </div>
+        );
     }
 
     if (isError) {
@@ -40,39 +47,55 @@ function AllTradableStocks() {
                 stock.exchangeShortName !== undefined &&
                 stock.exchangeShortName
                     .toLowerCase()
-                    .includes(searchQuery.toLowerCase())) ||
-            (stock.type !== null &&
-                stock.type !== undefined &&
-                stock.type.toLowerCase().includes(searchQuery.toLowerCase()))
+                    .includes(searchQuery.toLowerCase()))
     );
 
-    const Row = ({ index, style }) => (
-        <div
-            className={classNames(
-                styles.row,
-                index % 2 === 0 ? styles.even : styles.odd
-            )}
-            style={style}
-        >
-            <div className={classNames(styles.cell, styles.cell1)}>
-                {filteredData[index]?.symbol}
-            </div>
-            <div className={classNames(styles.cell, styles.cell2)}>
-                {filteredData[index]?.name}
-            </div>
-            <div className={classNames(styles.cell, styles.cell3)}>
-                {filteredData[index]?.price}
-            </div>
-            <div className={classNames(styles.cell, styles.cell4)}>
-                {filteredData[index]?.exchangeShortName}
-            </div>
-            <div className={classNames(styles.cell, styles.cell5)}>
-                {filteredData[index]?.type === 'etf'
-                    ? 'ETF'
-                    : filteredData[index]?.type}
-            </div>
-        </div>
-    );
+    const Row = ({ index, style }) => {
+        const stock = filteredData[index];
+        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
+        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
+        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
+        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
+        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
+        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
+        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
+        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
+        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
+        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
+        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
+        return (
+            <Link
+                to={`/stocks/${stock?.symbol}`}
+                target="_blank"
+                className={classNames(
+                    styles.row,
+                    index % 2 === 0 ? styles.even : styles.odd
+                )}
+                style={style}
+            >
+                <div className={classNames(styles.cell, styles.cell1)}>
+                    {stock?.symbol}
+                </div>
+                <div className={classNames(styles.cell, styles.cell2)}>
+                    {stock?.name}
+                </div>
+                <div className={classNames(styles.cell, styles.cell3)}>
+                    {stock?.price}
+                </div>
+                <div className={classNames(styles.cell, styles.cell4)}>
+                    {stock?.exchangeShortName}
+                </div>
+                <div className={classNames(styles.cell, styles.cell5)}>
+                    {stock?.type === 'etf' ? 'ETF' : stock?.type}
+                </div>
+            </Link>
+        );
+    };
+
+    Row.propTypes = {
+        index: PropTypes.number,
+        style: PropTypes.object,
+    };
 
     const VirtualizedTable = () => (
         <div className={styles.table}>
@@ -84,7 +107,7 @@ function AllTradableStocks() {
                     Name
                 </div>
                 <div className={classNames(styles.headerCell, styles.header3)}>
-                    Price
+                    $
                 </div>
                 <div className={classNames(styles.headerCell, styles.header4)}>
                     Exchange
@@ -96,7 +119,7 @@ function AllTradableStocks() {
             <List
                 className={styles.list}
                 height={500}
-                itemCount={data.length}
+                itemCount={filteredData.length}
                 itemSize={50}
                 width={'100%'}
             >
@@ -106,18 +129,28 @@ function AllTradableStocks() {
     );
 
     return (
-        <div className={styles.allTradableStocks}>
-            <div className={styles.searchBar}>
-                <input
-                    type="text"
-                    placeholder="Search by stock symbol, name, exchange..."
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                    className={styles.searchInput}
-                />
+        <>
+            <h2>Search any stock...</h2>
+            <div className={styles.allTradableStocks}>
+                <div className={styles.searchBar}>
+                    <input
+                        type="text"
+                        placeholder="Search any stock by symbol, company, exchange..."
+                        value={searchQuery}
+                        onChange={handleSearchChange}
+                        className={styles.searchInput}
+                    />
+                </div>
+                <div className={styles.results}>
+                    Showing{' '}
+                    <span className={styles.count}>
+                        {filteredData.length.toLocaleString()}
+                    </span>{' '}
+                    tradable stock{filteredData.length === 1 ? '' : 's'}...
+                </div>
+                <VirtualizedTable />
             </div>
-            <VirtualizedTable />
-        </div>
+        </>
     );
 }
 

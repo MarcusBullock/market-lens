@@ -1,0 +1,84 @@
+/* Centering the animation on the page */
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px; 
+    background-color: rgb(255, 241, 229);;
+  }
+  
+  /* Ellipses loader container */
+  .ellipsesLoader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 1.5s infinite linear;
+  }
+  
+  /* Each ellipse */
+  .ellipse {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #a400e0;
+
+    opacity: 0.7;
+    animation: ellipseBounce 1.5s infinite ease-in-out;
+  }
+  
+  /* Position each ellipse in a circular pattern */
+  .ellipse:nth-child(1) {
+    top: 0;
+    animation-delay: 0s;
+  }
+  
+  .ellipse:nth-child(2) {
+    right: 0;
+    animation-delay: 0.25s;
+  }
+  
+  .ellipse:nth-child(3) {
+    bottom: 0;
+    animation-delay: 0.5s;
+  }
+  
+  .ellipse:nth-child(4) {
+    left: 0;
+    animation-delay: 0.75s;
+  }
+  
+  /* Rotate the whole ellipses loader */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Bounce effect for each ellipse */
+  @keyframes ellipseBounce {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+  }
+  
+  /* Loading text */
+  .loadingText {
+    font-size: 18px;
+    color: #333;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    margin-top: 20px;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+  }

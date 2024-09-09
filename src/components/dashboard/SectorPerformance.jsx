@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import styles from './SectorPerformance.module.scss';
 import PropTypes from 'prop-types';
 import { useQuery } from '@tanstack/react-query';
-import { getSectorPerformance } from '../../services/api';
+import { getSectorPerformance } from '../../services/dashboardApi';
 
 function SectorPerformance({ className }) {
     const { data, isLoading, isError } = useQuery({

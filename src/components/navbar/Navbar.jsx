@@ -40,9 +40,9 @@ const Navbar = () => {
                                 selectedTab === 'stocks' ? styles.active : ''
                             )}
                         >
-                            Stocks
+                            Stockfinder
                         </Link>
-                        <Link
+                        {/* <Link
                             to="/indices"
                             onClick={() => selectTab('indices')}
                             className={classNames(
@@ -61,7 +61,7 @@ const Navbar = () => {
                             )}
                         >
                             Futures
-                        </Link>
+                        </Link> */}
                     </div>
                     <div className={styles.hamburger}>
                         <div>

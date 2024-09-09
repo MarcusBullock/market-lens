@@ -69,6 +69,10 @@ a::-webkit-scrollbar {
     padding: 0 10px;
 }
 
+.title:hover {
+    text-decoration: underline !important;
+}
+
 @media screen and (min-width: 768px) {
     .news li {
         flex-direction: row;

@@ -1,0 +1,28 @@
+.metrics {
+    margin-top: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 40px;
+    row-gap: 2px;
+    width: 100%;
+    justify-content: center;
+
+    .stockDetail {
+        display: flex;
+        gap: 10px;
+        padding-bottom: 3px;
+        border-bottom: 1px dotted #494949;
+        width: 258px;
+        justify-content: space-between;
+
+        .stockDetailLabel {
+            font-weight: 400;
+            font-size: 13px;
+        }
+
+        .stockDetailValue {
+            font-weight: 600;
+            font-size: 15px;
+        }
+    }
+}

@@ -4,7 +4,6 @@ import styles from './Stocks.module.scss';
 function Stocks() {
     return (
         <div className={styles.stocks}>
-            <h2>Search any stock...</h2>
             <AllTradableStocks />
         </div>
     );

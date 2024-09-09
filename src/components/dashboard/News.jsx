@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types';
 import classNames from 'classnames';
 import styles from './News.module.scss';
 import { useQuery } from '@tanstack/react-query';
-import { getNews } from '../../services/api';
+import { getNews } from '../../services/dashboardApi';
 
 function News({ className }) {
     const { data, isLoading, isError } = useQuery({
@@ -27,7 +27,7 @@ function News({ className }) {
             <h3>Market News</h3>
             <ul>
                 {data.content.map((row) => (
-                    <li key={row.headline}>
+                    <li key={row.title}>
                         <img
                             src={row.image}
                             alt="headline pic"
@@ -36,7 +36,7 @@ function News({ className }) {
                         />
                         <a href={row.link} target="_blank" rel="noreferrer">
                             <span className={styles.text}>
-                                <h4>{row.title}</h4>
+                                <h4 className={styles.title}>{row.title}</h4>
                                 <p>{stripHtml(row.content)}</p>
                             </span>
                         </a>

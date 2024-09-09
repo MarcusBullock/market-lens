@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import AppLayout from './components/AppLayout';
 import Dashboard from './pages/Dashboard';
 import Stocks from './pages/Stocks';
+import Stock from './pages/Stock';
 import Indices from './pages/Indices';
 import Futures from './pages/Futures';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -28,6 +29,7 @@ function App() {
                         />
                         <Route path="dashboard" element={<Dashboard />} />
                         <Route path="stocks" element={<Stocks />} />
+                        <Route path="/stocks/:symbol" element={<Stock />} />
                         <Route path="indices" element={<Indices />} />
                         <Route path="futures" element={<Futures />} />
                     </Route>
