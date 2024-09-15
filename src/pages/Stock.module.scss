@@ -7,7 +7,6 @@
 }
 
 .stock {
-
     .headerRow {
         display: flex;
         flex-direction: row;
@@ -17,7 +16,7 @@
 
     .headerPrice {
         font-weight: 800;
-        font-family: "Montserrat", sans-serif;
+        font-family: 'Montserrat', sans-serif;
         color: #313131;
         font-size: 28px;
         margin: 0;
@@ -35,7 +34,7 @@
 
     .red {
         color: #cc0000;
-    }    
+    }
 }
 
 .stock h1 {
@@ -44,4 +43,3 @@
     border-bottom: 1px solid #313131;
     margin-bottom: 10px;
 }
-

@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+#FFS why isn't this in here by default. UNFUCKINGBELIEVABLE
+.env
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
