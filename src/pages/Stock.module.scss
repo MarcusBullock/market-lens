@@ -12,6 +12,43 @@
         flex-direction: row;
         align-items: center;
         margin-bottom: 10px;
+
+        .actions {
+            margin-left: auto;
+            display: flex;
+            flex-direction: row;
+            
+            .action {
+                cursor: pointer;
+                font-size: 13px;
+                font-weight: 500;
+                padding: 8px 15px;
+                user-select: none;
+                box-sizing: border-box;
+                outline: none;
+                border: 2px solid rgb(202, 183, 167);
+
+                &:hover {
+                    background-color: rgb(202, 183, 167);
+                }
+
+                &:first-child {
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }        
+                
+                &:last-child {
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+                
+                &.selected {                    
+                    background-color: rgb(202, 183, 167);
+                    font-weight: 600;
+                }
+            }
+            
+        }
     }
 
     .headerPrice {

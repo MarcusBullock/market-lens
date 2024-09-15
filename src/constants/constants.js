@@ -1,5 +1,3 @@
-import { subYears } from 'date-fns';
-
 export const CurrencyData = [
     {
         label: '1 GBP £',
@@ -96,47 +94,3 @@ export const CommoditiesData = [
         todayChangePercent: 1.3,
     },
 ];
-
-export const StockPriceData = generateTrendBasedStockData(
-    subYears(new Date(), 5),
-    new Date()
-);
-
-function generateTrendBasedStockData(startDate, endDate) {
-    let currentDate = new Date(startDate);
-    const data = [];
-    let lastClosePrice = 100; // Starting price
-
-    while (currentDate <= new Date(endDate)) {
-        // 70% chance of uptrend, 30% chance of downtrend
-        const trendDirection = Math.random() < 0.51 ? 1 : -1;
-        const volatility = +(Math.random() * 5).toFixed(2); // Random volatility between 0 and 5
-        const open = +(
-            lastClosePrice +
-            (Math.random() * 2 - 1) * volatility
-        ).toFixed(2); // Slight variation from last close
-        const close = +(
-            open +
-            trendDirection * (Math.random() * volatility)
-        ).toFixed(2);
-        const high = Math.max(open, close) + +(Math.random() * 2).toFixed(2); // High above open/close
-        const low = Math.min(open, close) - +(Math.random() * 2).toFixed(2); // Low below open/close
-        const volume = Math.floor(Math.random() * (1000000 - 100000) + 100000); // Random volume
-
-        data.push({
-            date: currentDate.toISOString().split('T')[0],
-            open,
-            close,
-            low: +low.toFixed(2),
-            high: +high.toFixed(2),
-            volume,
-            price: +((open + close) / 2).toFixed(2),
-        });
-
-        lastClosePrice = close; // Set the next day's starting point based on today's close
-
-        currentDate.setDate(currentDate.getDate() + 1);
-    }
-
-    return data;
-}

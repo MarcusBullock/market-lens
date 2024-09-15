@@ -6,23 +6,27 @@
     row-gap: 2px;
     width: 100%;
     justify-content: center;
+    background-color: rgb(242, 223, 206);
+    padding: 15px;
+    border-radius: 20px;
+    border: 3px solid #363636;
 
     .stockDetail {
         display: flex;
         gap: 10px;
         padding-bottom: 3px;
         border-bottom: 1px dotted #494949;
-        width: 258px;
+        width: 248px;
         justify-content: space-between;
 
         .stockDetailLabel {
             font-weight: 400;
-            font-size: 13px;
+            font-size: 11px;
         }
 
         .stockDetailValue {
             font-weight: 600;
-            font-size: 15px;
+            font-size: 13px;
         }
     }
 }

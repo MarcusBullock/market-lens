@@ -79,7 +79,7 @@ function Metrics({ price, range, mktCap, volAvg }) {
             <div className={styles.stockDetail}>
                 <div className={styles.stockDetailLabel}>Avg. volume</div>
                 <div className={styles.stockDetailValue}>
-                    {volAvg.toLocaleString()}
+                    {volAvg.toFixed(2).toLocaleString()}
                 </div>
             </div>
             <div className={styles.stockDetail}>
@@ -88,7 +88,9 @@ function Metrics({ price, range, mktCap, volAvg }) {
             </div>
             <div className={styles.stockDetail}>
                 <div className={styles.stockDetailLabel}>1y target est</div>
-                <div className={styles.stockDetailValue}>{price + 70.5}</div>
+                <div className={styles.stockDetailValue}>
+                    {(price + 70.5).toFixed(2)}
+                </div>
             </div>
         </div>
     );
@@ -98,7 +100,7 @@ export default Metrics;
 
 Metrics.propTypes = {
     price: PropTypes.number,
-    range: PropTypes.number,
+    range: PropTypes.string,
     mktCap: PropTypes.number,
     volAvg: PropTypes.number,
 };
