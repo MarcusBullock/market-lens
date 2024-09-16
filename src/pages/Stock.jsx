@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import Metrics from '../components/stocks/stock/Metrics';
 import { useState, useEffect } from 'react';
 import { isAfter, subDays, subMonths, subYears } from 'date-fns';
+import Profile from '../components/stocks/stock/Profile';
 
 function Stock() {
     const { symbol } = useParams();
@@ -61,21 +62,21 @@ function Stock() {
         mktCap,
         range,
         companyName,
-        //   currency,
-        //   exchange,
-        //   exchangeShortName,
-        //   industry,
-        //   website,
-        //   description,
-        //   ceo,
-        //   sector,
-        //   fullTimeEmployees,
-        //   city,
-        //   image,
-        //   isEtf,
-        //   isActivelyTrading,
-        //   isAdr,
-        //   isFund,
+        description,
+        currency,
+        exchange,
+        exchangeShortName,
+        industry,
+        website,
+        ceo,
+        sector,
+        fullTimeEmployees,
+        city,
+        image,
+        isEtf,
+        isActivelyTrading,
+        isAdr,
+        isFund,
     } = profileData[0][0];
 
     const previousPrice = price - changes;
@@ -183,7 +184,7 @@ function Stock() {
                 mktCap={mktCap}
                 range={range}
             />
-            {/* <div>{description}</div> */}
+            <Profile className={styles.profile} data={profileData[0][0]} />
         </div>
     );
 }

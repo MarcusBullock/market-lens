@@ -48,7 +48,8 @@ export async function getProfile(symbol) {
                 `marketLens${symbol}ProfileData`,
                 JSON.stringify(result)
             );
-            const history = generateFakeStockHistory(result.price);
+
+            const history = generateFakeStockHistory(result[0].price);
             return [result, history];
         }
     } catch (error) {
@@ -57,6 +58,7 @@ export async function getProfile(symbol) {
     }
 }
 export function generateFakeStockHistory(endPrice) {
+    console.log('END PRICE', endPrice);
     if (endPrice !== null && endPrice !== undefined) {
         const data = [];
         const numberOfDays = 365 * 5; // 5 years
@@ -74,7 +76,7 @@ export function generateFakeStockHistory(endPrice) {
         for (let i = 0; i < numberOfDays; i++) {
             const open = currentPrice;
             // Introduce smaller, realistic daily changes
-            const randomChange = (Math.random() - 0.5) * 0.2; // Smaller random change between -0.1 and 0.1
+            const randomChange = (Math.random() - 0.5) * 3; // Smaller random change between -0.1 and 0.1
 
             // Ensure the price never goes below 0
             currentPrice = Math.max(currentPrice + randomChange, 0.01);
@@ -99,20 +101,6 @@ export function generateFakeStockHistory(endPrice) {
                 ).toISOString(),
             });
         }
-
-        // Adjust the final day's data to end closer to the endPrice
-        const lastDay = new Date(
-            endDate.getTime() + (numberOfDays - 1) * 24 * 60 * 60 * 1000
-        );
-        data.push({
-            open: currentPrice,
-            close: endPrice,
-            high: Math.max(currentPrice, endPrice) + Math.random() * 0.1,
-            low: Math.min(currentPrice, endPrice) - Math.random() * 0.1,
-            price: endPrice,
-            volume: Math.floor(Math.random() * 10000) + 1000,
-            date: lastDay.toISOString(),
-        });
 
         return data;
     }

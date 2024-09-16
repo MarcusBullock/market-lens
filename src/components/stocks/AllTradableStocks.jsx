@@ -52,17 +52,6 @@ function AllTradableStocks() {
 
     const Row = ({ index, style }) => {
         const stock = filteredData[index];
-        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
-        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
-        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
-        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
-        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
-        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
-        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
-        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
-        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
-        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
-        console.log(`/stocks/${encodeURIComponent(stock?.symbol)}`);
         return (
             <Link
                 to={`/stocks/${stock?.symbol}`}

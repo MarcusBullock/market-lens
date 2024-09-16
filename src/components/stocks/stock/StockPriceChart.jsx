@@ -19,26 +19,6 @@ function StockPriceChart({ data, timespan }) {
         Math.ceil(maxPrice),
     ];
 
-    const xAxisInterval = () => {
-        const dataLength = data.length;
-        switch (timespan) {
-            case '5Y':
-                return dataLength / 182;
-            case '1Y':
-                return dataLength / 37;
-            case '6M':
-                return dataLength / 18;
-            case '3M':
-                return dataLength / 6;
-            case '1M':
-                return dataLength / 3;
-            case '5D':
-                return dataLength / 1;
-            default:
-                return 10;
-        }
-    };
-
     const formatXAxis = (tickItem) => {
         const date = new Date(tickItem);
         return format(
@@ -51,6 +31,8 @@ function StockPriceChart({ data, timespan }) {
                 : 'MMM yy'
         );
     };
+
+    let xAxisInterval = Math.round(data.length / 11);
 
     const CustomTooltip = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
@@ -107,11 +89,15 @@ function StockPriceChart({ data, timespan }) {
                 <LineChart data={data}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
-                        interval={xAxisInterval}
                         dataKey="date"
                         tickFormatter={formatXAxis}
+                        interval={xAxisInterval}
+                        tick={{ fontWeight: 600, fontSize: '12px' }}
                     />
-                    <YAxis domain={yAxisDomain} />
+                    <YAxis
+                        domain={yAxisDomain}
+                        tick={{ fontWeight: 600, fontSize: '12px' }}
+                    />
                     <Tooltip content={<CustomTooltip />} />
                     <Line
                         type="monotone"
