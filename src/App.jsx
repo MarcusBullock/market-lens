@@ -33,8 +33,6 @@ function App() {
                         <Route path="indices" element={<Indices />} />
                         <Route path="futures" element={<Futures />} />
                     </Route>
-                    {/* <Route path="login" element={<Login />} />
-                <Route path="*" element={<PageNotFound />} /> */}
                 </Routes>
             </BrowserRouter>
         </QueryClientProvider>

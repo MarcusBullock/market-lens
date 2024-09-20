@@ -12,8 +12,10 @@ dist
 dist-ssr
 *.local
 
-#FFS why isn't this in here by default. UNFUCKINGBELIEVABLE
-.env
+*.env
+*.env.example
+*.env.local
+*.env.staging
 
 # Editor directories and files
 .vscode/*
